@@ -1,0 +1,560 @@
+/*
+ * General settings.
+ */
+.indent {
+    margin-left: 6%;
+}
+
+.tmargin {
+    margin-top: 20px;
+}
+
+/*
+ * The discussionlist in the view.php
+ */
+
+.overflowheaderlist th.header.replies .iconsmall {
+    margin: 0 .3em;
+}
+
+.overflowheaderlist .picture {
+    width: 35px;
+}
+
+.overflowheaderlist .discussion .starter {
+    vertical-align: middle;
+}
+
+.overflowheaderlist .discussion .pinned img {
+    padding: 5px;
+}
+
+.overflowheaderlist .discussion .lastpost {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.overflowdiscussion .discussionmove .icon {
+    width: 24px;
+    height: 24px;
+    color: #848d95;
+}
+
+.overflowheaderlist .discussion .author,
+.overflowheaderlist .discussion .replies,
+.overflowheaderlist .discussion .lastpost {
+    white-space: normal;
+}
+
+.overflowheaderlist .discussion .discussionsubscription,
+.overflowheaderlist .discussion .replies {
+    text-align: center;
+}
+
+.overflowheaderlist .discussion .topic,
+.overflowheaderlist .discussion .discussionsubscription,
+.overflowheaderlist .discussion .topic.starter,
+.overflowheaderlist .discussion .picture,
+.overflowheaderlist .discussion .author,
+.overflowheaderlist .discussion .replies,
+.overflowheaderlist .discussion .lastpost {
+    vertical-align: top;
+}
+
+.overflowheaderlist .discussion .topic .icon {
+    margin-left: 0;
+}
+
+span.unread .iconsmall {
+    width: 12px;
+    margin-left: 12px;
+}
+
+.overflowdiscussion {
+    padding: 8px;
+    display: block;
+}
+
+.overflowdiscussion .leftbox {
+    white-space: nowrap;
+    min-width: 80px;
+}
+
+.overflowdiscussion .reply-correction {
+    display: inline-block;
+    transform: translateY(1px);
+}
+
+.overflowdiscussion .unread-bubble {
+    background: #c30909;
+    padding: 3px 4px 4px 4px;
+    color: white;
+    font-weight: bold;
+    line-height: 1;
+    display: inline-block;
+    border-radius: 12px;
+    transform: translate(-8px, -10px);
+}
+
+.overflow-icon-no-margin .icon,
+.icon.overflow-icon-no-margin {
+    margin: 0;
+}
+
+.overflowdiscussion .status .icon {
+    margin: 0;
+}
+
+.overflowdiscussion .votes .votecount {
+    line-height: 0.75;
+    font-size: 1.25em;
+    margin: 0;
+}
+
+.overflowdiscussion .subject {
+    font-size: 1.25em;
+}
+
+/*
+ * The form to post new messages.
+ */
+.overflowaddnew {
+    margin-bottom: 20px;
+}
+
+#newdiscussionform {
+    float: left;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/*
+ * The Index Page.
+ */
+#page-mod-overflow-index .subscription {
+    float: right;
+    margin: 5px 0;
+    text-align: right;
+    white-space: nowrap;
+}
+
+#page-mod-overflow-index span.unread img {
+    border-style: none;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/*
+ * The styles for the discussion.php
+ */
+.overflowpost {
+    margin: 0 0 1em 0;
+    max-width: 100%;
+    position: relative;
+}
+
+.overflowpost .left-info {
+    min-width: 70px;
+}
+
+.overflowpost.overflowcomment .left-info {
+    min-width: 50px;
+}
+
+.overflowpost .anchor {
+    opacity: 0.4;
+    transition: opacity 200ms;
+    float: right;
+}
+
+.overflowpost .anchor:hover {
+    opacity: 0.8;
+}
+
+.overflowpost .picture img {
+    margin: 4px;
+}
+
+.overflowpost .post-word-count {
+    font-size: .85em;
+    font-style: italic;
+}
+
+.overflowpost .shortenedpost .post-word-count {
+    display: inline;
+    padding: 0 .3em;
+}
+
+.overflowpost:target:before {
+    background: #0070a8;
+    bottom: -1px;
+    content: "";
+    display: block;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    width: 4px;
+}
+
+.overflowpost.markedsolution.markedhelpful:before {
+    background: linear-gradient(80deg, rgba(234, 133, 22, 1) 50%, rgba(112, 160, 52, 1) 50%);
+    bottom: -1px;
+    content: "";
+    display: block;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    width: 4px;
+}
+
+.overflowpost.markedsolution:before {
+    background: rgba(112, 160, 52, 1);
+    bottom: -1px;
+    content: "";
+    display: block;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    width: 4px;
+}
+
+.overflowpost.markedhelpful:before {
+    background: rgba(234, 133, 22, 1);
+    bottom: -1px;
+    content: "";
+    display: block;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    width: 4px;
+}
+
+.overflowpost .onlyifsolved,
+.overflowpost .onlyifhelpful {
+    display: none;
+}
+
+.overflowpost.markedhelpful .onlyifhelpful {
+    display: initial;
+}
+
+.overflowpost.markedsolution .onlyifsolved {
+    display: initial;
+}
+
+.overflowpost > .list-group:first-child .list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.overflowpost > .list-group:first-child .list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.overflowpost > .list-group:last-child .list-group-item:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#region-main > .overflowpost {
+    min-height: 45rem;
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
+.overflowpost .header {
+    margin-bottom: 3px;
+}
+
+.overflowpost .picture img {
+    margin: 3px;
+}
+
+.overflowpost .picture img.userpicture {
+    margin-left: 3px;
+    margin-right: 10px;
+}
+
+.overflowpost .subject {
+    font-weight: 700;
+}
+
+.overflowpost.unread .row.header,
+.local_overflow-label-unread {
+    background-color: #fff38a;
+}
+
+.overflowpost.unread .row.header {
+    border-bottom: 1px solid #ddd;
+}
+
+.overflowpost .topic .author {
+    color: #848d95;
+}
+
+.overflowpost .topic .author .icon {
+    margin-right: 0;
+}
+
+.overflowpost .attachments img {
+    max-width: 40em;
+    max-height: 30em;
+}
+
+/*
+ * The Votes.
+ */
+.overflowpost .novotecell {
+    width: 10px;
+}
+
+.overflowpost .votecell .votes,
+.moodleeoverflowdiscussion .votes {
+    display: block;
+    text-align: center;
+}
+
+.overflowpost .votecell .votes p,
+.moodleeoverflowdiscussion .votes  p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.overflowpost.overflowcomment .votecell .votes p {
+    margin-bottom: -6px;
+    margin-top: -6px;
+}
+
+.overflowpost .post-menu > :not(:first-child) {
+    border-left: 2px solid #bbb;
+    padding-left: 4px;
+    margin-left: 4px;
+}
+
+/*
+ * The Answers.
+ */
+.overflowpost .answercell {
+    vertical-align: top;
+    width: 100%;
+}
+
+.overflowpost .answercell .post-text {
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.overflowpost .answercell .comment-by {
+    color: #848d95;
+}
+
+.overflowpost .answercell .comment-commands {
+    text-align: right;
+}
+
+.overflowpost .answercell .post-info,
+.overflowpost .commentcell .post-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.overflowpost .answercell .post-info .rightbox,
+.overflowpost .commentcell .post-info .rightbox {
+    text-align: right;
+    flex-grow: 1;
+}
+
+.overflowpost .answercell .post-info .rightbox .status {
+    color: #848d95;
+}
+
+.overflowpost .answercell .post-info .rightbox .status .icon {
+    height: 16px;
+    width: 16px;
+}
+
+.overflowpost .answercell .leftbox,
+.overflowpost .commentcell .leftbox {
+    margin-right: 12px;
+}
+
+.overflowpost .answercell .leftbox.questioner {
+    margin-right: 8px;
+    padding: 4px;
+}
+
+.overflowpost .commentcell .leftbox.questioner {
+    margin-right: 8px;
+    padding: 0 4px;
+}
+
+.overflowpost .answercell .post-info .leftbox .user-info,
+.overflowdiscussion div.user-info {
+    color: #848d95;
+}
+
+.overflowpost .answercell .post-info .leftbox .user-info .user-action-time {
+    display: block;
+}
+
+.overflowpost .answercell .post-info .leftbox .user-info .user-action-shorttime {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .overflowpost .answercell .post-info .leftbox .user-info .user-action-time {
+        display: none;
+    }
+
+    .overflowpost .answercell .post-info .leftbox .user-info .user-action-shorttime {
+        display: block;
+    }
+}
+
+.overflowpost .answercell .post-info .leftbox .user-info .user-avatar {
+    border-collapse: separate;
+    border-radius: 1px;
+    float: left;
+    height: 32px;
+    width: 32px;
+}
+
+.overflowpost .answercell .post-info .leftbox .user-info .user-details {
+    float: left;
+    line-height: 17px;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.overflowpost .answercell .post-info .leftbox .user-info .user-details .icon {
+    margin-bottom: 3px;
+    margin-right: 0;
+}
+
+.overflowpost .answercell .post-info .leftbox .user-info .user-avatar + .user-details {
+    margin-left: 8px;
+    width: calc(100% - 40px);
+}
+
+.overflowpost .commentcell {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.overflowpost .questioner,
+.overflowdiscussion .questioner {
+    background-color: rgba(80, 168, 255, .1);
+}
+
+.overflowpost .commentcell .comment-text {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    flex-grow: 1;
+}
+
+.overflowpost .commentcell .post-menu {
+    text-align: right;
+}
+
+.local_overflow-hack-primary-to-danger-btn .btn-primary {
+    background-color: #a90000;
+    border-color: #a90000;
+}
+
+.local_overflow-hack-primary-to-danger-btn .btn-primary:hover,
+.local_overflow-hack-primary-to-danger-btn .btn-primary:focus {
+    background-color: #900000;
+    border-color: #900000;
+}
+
+.overflowpost.pendingreview > :first-child {
+    opacity: 0.6;
+    transition: opacity 200ms linear;
+}
+
+.overflowpost.pendingreview:hover > :first-child {
+    opacity: 1;
+}
+
+.overflowpost.pendingreview .onlyifreviewed {
+    display: none;
+}
+
+.overflowpost:not(.pendingreview) .onlyifnotreviewed {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .hide-600 {
+        display: none;
+    }
+}
+
+.icon.overflow-icon-2x,
+.overflow-icon-1_5x {
+    font-size: 2em;
+    width: 32px;
+    height: 32px;
+}
+
+.icon.overflow-icon-1_5x,
+.overflow-icon-1_5x {
+    font-size: 1.5em;
+    width: 24px;
+    height: 24px;
+}
+
+.icon.overflow-text-orange {
+    color: rgb(234, 133, 22);
+}
+
+.icon.overflow-text-green {
+    color: rgb(112, 160, 52);
+}
+
+.local_overflow-no-wrap {
+    white-space: nowrap;
+}
+
+.local_overflow-label-review,
+.local_overflow-label-unread {
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.local_overflow-label-review {
+    background-color: #ffd3d3;
+}
+
+
+.overflow-statistics-table .header .helpactivityclass {
+    padding: 0;
+    margin-left: 8px;
+}
+
+.overflow-gap-small {
+    gap: 8px;
+}
+
+#overflow-root .vote.icon[data-overflow-state="clicked"] {
+    color: #ea8516;
+}
+
+#overflow-root .vote.icon[data-overflow-state="notclicked"] {
+    color: #515151;
+}
+
+#overflow-root .vote.icon[data-overflow-state="disabled"] {
+    color: rgba(70, 70, 70, 0.4);
+}
+
+#overflow-root .vote.icon[data-overflow-action] {
+    cursor: pointer;
+}

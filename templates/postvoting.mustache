@@ -1,0 +1,44 @@
+{{!
+  This file is part of Moodle - http://moodle.org/
+
+  Moodle is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Moodle is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+  @template local_overflow/postvoting
+
+  overflow postvoting template.
+  The purpose of this template is to render the vote-section for questions and answers.
+
+  Example context (json):
+  {
+  }
+}}
+
+{{! Did the current user upvoted this post? }}
+<div class="vote icon fa fa-chevron-up overflow-icon-1_5x m-0" {{#canchange}}data-overflow-action="upvote"{{/canchange}} data-overflow-state="{{#userupvoted}}clicked{{/userupvoted}}{{!
+}}{{^userupvoted}}{{#canchange}}notclicked{{/canchange}}{{^canchange}}disabled{{/canchange}}{{/userupvoted}}"
+    title="{{#canchange}}{{!
+    }}{{#userupvoted}}{{#str}}action_remove_upvote, local_overflow{{/str}}{{/userupvoted}}{{!
+    }}{{^userupvoted}}{{#str}}action_upvote, local_overflow{{/str}}{{/userupvoted}}{{/canchange}}{{!
+    }}{{^canchange}}{{#str}}upvotenotchangeable, local_overflow{{/str}}{{/canchange}}"></div>
+
+{{! Display the amount of votes. }}
+<p class="votecount line-height-3" data-overflow-postreputation="{{postid}}">{{ votes }}</p>
+
+<div class="vote icon fa fa-chevron-down overflow-icon-1_5x m-0" {{#canchange}}data-overflow-action="downvote"{{/canchange}} data-overflow-state="{{#userdownvoted}}clicked{{/userdownvoted}}{{!
+    }}{{^userdownvoted}}{{#canchange}}notclicked{{/canchange}}{{^canchange}}disabled{{/canchange}}{{/userdownvoted}}"
+     title="{{#canchange}}{{!
+    }}{{#userdownvoted}}{{#str}}action_remove_downvote, local_overflow{{/str}}{{/userdownvoted}}{{!
+    }}{{^userdownvoted}}{{#str}}action_downvote, local_overflow{{/str}}{{/userdownvoted}}{{/canchange}}{{!
+    }}{{^canchange}}{{#str}}downvotenotchangeable, local_overflow{{/str}}{{/canchange}}"></div>

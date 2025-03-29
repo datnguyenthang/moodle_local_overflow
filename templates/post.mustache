@@ -1,0 +1,134 @@
+{{!
+  This file is part of Moodle - http://moodle.org/
+
+  Moodle is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Moodle is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+  @template local_overflow/post
+
+  overflow post template.
+  The purpose of this template is to render a post in the discussion.
+
+   Example context (json):
+   {
+   }
+}}
+
+{{! Print an anchor if the post is the first unread post of the discussion. }}
+{{# isfirstunread}}
+    <a id="unread"></a>
+{{/ isfirstunread}}
+
+{{! Start the post. Mark it read or unread. }}
+<div id="p{{postid}}" class="overflowpost {{#iscomment}}bg-light overflowcomment{{/iscomment}}
+    border {{postclass}} {{#needsreview}}pendingreview{{/needsreview}}
+    {{#isfirstpost}}firstpost starter{{/isfirstpost}}" role="region" aria-label="{{ discussionby }}"
+    data-overflow-postid="{{postid}}">
+    <div class="d-flex p-2 w-100">
+        <div class="left-info text-center">
+        {{#showvotes}}
+            <div class="votecell onlyifreviewed">
+                <div class="votes">
+                    {{> local_overflow/postvoting }}
+                </div>
+            </div>
+        {{/showvotes}}
+        {{^showvotes}}
+            <div class="novotecell onlyifreviewed"></div>
+        {{/showvotes}}
+        {{#needsreview}}
+            <div class="onlyifnotreviewed pr-2 overflow-icon-no-margin">
+                {{#pix}}i/pending-big, local_overflow,
+                    {{#withinreviewperiod}}
+                        {{#str}}pending_review, local_overflow{{/str}}
+                    {{/withinreviewperiod}}
+                    {{^withinreviewperiod}}
+                        {{#str}}pending_review_but_cannot_now, local_overflow, {{reviewdelay}} {{/str}}
+                    {{/withinreviewperiod}}
+                {{/pix}}
+            </div>
+        {{/needsreview}}
+            <div class="status overflow-icon-no-margin">
+                    <span class="onlyifsolved">{{#pix}} i/status-solved, local_overflow, {{#str}}ratedbyteacher, local_overflow{{/str}} {{/pix}}</span>
+                    <span class="onlyifhelpful">{{#pix}} i/status-helpful, local_overflow, {{#str}}ratedbystarter, local_overflow{{/str}} {{/pix}}</span>
+            </div>
+        </div>
+        <div class="answercell d-flex flex-column">
+            <div class="post-text">
+                <a href="{{{permalink}}}" class="anchor" title="{{#str}}permalink, local_overflow{{/str}}">
+                    <i class="fa fa-hashtag text-muted icon overflow-icon-1_5x overflow-icon-no-margin"></i></a>
+                {{{ postcontent }}}
+            </div>
+            <div class="attachments flex-grow-1">
+                {{#attachments}}
+                    {{#image}}
+                        <img src="{{filepath}}" alt=""/>
+                        <br>
+                    {{/image}}
+                    {{^image}}
+                        <a class="icon-size-6" href="{{filepath}}">
+                            {{{icon}}}
+                        </a>
+                        <a href="{{filepath}}">
+                            {{filename}}
+                        </a>
+                    {{/image}}
+                    <br>
+                {{/attachments}}
+            </div>
+            <div class="post-info">
+                <div class="leftbox {{questioner}}">
+                    {{^iscomment}}
+                        <div class="user-info">
+                            {{# picture }}
+                            <div class="user-avatar">
+                                {{{ picture }}}
+                            </div>
+                            {{/picture}}
+                            <div class="user-details">
+                                {{{ byname }}} {{#showreputation}}{{#showrating}}({{#pix}}star, local_overflow, {{#str}}reputation, local_overflow{{/str}}{{/pix}}<span data-overflow-userreputation="{{byuserid}}">{{ byrating }}</span>){{/showrating}}{{/showreputation}}
+                                <div class="user-action-time">
+                                    {{ bydate }}
+                                </div>
+                                <div class="user-action-shorttime">
+                                    {{byshortdate}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/iscomment}}
+                    {{#iscomment}}
+                        <span class="text-muted">{{{ byname }}} - {{ byshortdate }}</span>
+                    {{/iscomment}}
+                </div>
+                <div class="rightbox">
+                    <div class="post-menu">
+                        {{{ commands }}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{# canreview }}
+        {{# needsreview }}
+            <div class="reviewrow p-2 text-center bg-gray">
+                {{# withinreviewperiod }}
+                    {{> local_overflow/review_buttons }}
+                {{/withinreviewperiod}}
+                {{^ withinreviewperiod }}
+                    {{#str}}pending_review_but_cannot_now, local_overflow, {{reviewdelay}} {{/str}}
+                {{/withinreviewperiod}}
+            </div>
+        {{/needsreview}}
+    {{/canreview}}
+</div>
